@@ -1,4 +1,4 @@
-# Django_Learning_Notes
+Django_Learning_Notes
 
 书名：《python编程：从入门到实践》（python3实现，django版本1.11，win10系统）
 
@@ -19,7 +19,7 @@
 2. 创建应用程序
   激活虚拟环境：11_env\Scripts\activate
   执行命令python manage.py startapp learning_logs
-  定义模型：打开 learning_logs\models.py文件
+   定义模型：打开 learning_logs\models.py文件
            编辑：class Topic(models.Model):
                     """用户学习的主题"""
                     text = models.CharField(max_length=200)
@@ -27,3 +27,14 @@
                     def __str__(self):
                         """返回模型的字符串表示"""
                         return self.text
+  激活模型：打开settings.py（它位于目录learning_log/learning_log中）
+          并修改：--snip--
+                 INSTALLED_APPS = (
+                     --snip--
+                     'django.contrib.staticfiles',
+
+                     # 我的应用程序
+                     'learning_logs',
+                    )
+                 --snip--
+                 
